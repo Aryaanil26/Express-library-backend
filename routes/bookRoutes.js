@@ -5,13 +5,13 @@ const router = express.Router()
 //getallbooks
 router.get('/',getAllBooks)
 //get book by id
-router.get('/:bookId',getBookById)
+router.get('/:book._Id',getBookById)
 //add book
 router.post('/',addBook)
 //update book
-router.patch('/:bookId',updateBook)
+router.patch('/:book._Id',updateBook)
 //delete book
-router.delete('/:bookId',deleteBook)
+router.delete('/:book._Id',deleteBook)
 
 
 

@@ -6,7 +6,7 @@ const getAllBooks = async(req, res)=>{
 }
 
 const getBookById =async(req, res)=>{
-    const books = await Book.findById(req.params.bookId).exec();
+    const books = await Book.findById(req.params.book._Id).exec();
     res.json(books)
 }
 
@@ -26,7 +26,7 @@ const updateBook = (req, res)=>{
 }
 
 const deleteBook = async (req, res)=>{
-    await Book.findByIdAndDelete(req.params.bookId)
+    await Book.findByIdAndDelete(req.params.book._Id)
     res.send("deleted")
 }
 

@@ -6,8 +6,8 @@ const getAllAuthors = async (req, res)=>{
 }
 
 const getAuthorById =async(req, res)=>{
-    const author = await Author.findById(req.params.authorId).exec();
-    res.json(author)
+    const authors = await Author.findById(req.params.author._id).exec();
+    res.json(authors)
 }
 
 const addAuthor = async(req, res)=>{
