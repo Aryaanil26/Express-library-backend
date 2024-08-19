@@ -1,9 +1,13 @@
 const jwt = require('jsonwebtoken');
 const checkLogin = async (req,res,next) =>{
- if(req.cookies.token){
+    const token = req.cookies.token;
+
+ if(token) {
     try{
-      const userData = jwt.verify(req.cookies.token,process.env.TOKEN_SECRET_KEY)
-      req.user = userData
+      const userData = jwt.verify(req.cookies.token,process.env.TOKEN_SECRET_KEY);
+
+      req.user = userData;
+      next();
     }
     catch(error){
      res.status(401).send("Unauthorized access!")
@@ -14,6 +18,4 @@ else {
 }
 }
 
-module.export = {
-    checkLogin
-}
+module.export = checkLogin;

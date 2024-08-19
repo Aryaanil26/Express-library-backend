@@ -1,4 +1,5 @@
-require("dotenv").config();
+require('dotenv').config();
+
 const express = require('express')
 const mongoose = require('mongoose');
 const cors = require('cors')
@@ -27,10 +28,10 @@ app.listen(port, () => {
 })
 
 
-
-main().then(() =>console.log("connected"))
-.catch(err => console.log(err));
-
 async function main() {
   await mongoose.connect(process.env.DB_URL);
 }
+
+main()
+.then(() =>console.log("connected"))
+.catch(err => console.log(err));

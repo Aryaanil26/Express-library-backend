@@ -9,4 +9,4 @@ router.post('/login',login)
 
 router.get('/verify', checkLogin, verifyLogin)
 
-module.exports = router
+module.exports = router;
